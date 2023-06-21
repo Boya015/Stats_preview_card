@@ -7,10 +7,55 @@
     ---Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6);
 ;
   }
+
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,main,div,h1, {
+  margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
   
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  } 
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
   body {
     background-color: hsl(233, 47%, 7%);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
   }
+
+
 
   main {
     flex-direction: row-reverse;
